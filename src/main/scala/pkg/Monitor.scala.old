@@ -1,0 +1,154 @@
+package pkg
+import scala.trace._
+import scala.annotation.tailrec
+
+object Monitor {
+
+  sealed trait Color // sealed = restricted to same file for pattern matching
+  case class Black() extends Color // case class ~= copy, immutable
+  case class Red() extends Color
+  case class White() extends Color
+
+  case class Pixel(color: Color = Black(), brightness: Int = 0)
+
+  type PixelGrid = Seq[Seq[Pixel]]
+  type PixelColumn = Seq[Pixel]
+
+  def appendHorizontally(left: PixelGrid, right: PixelGrid): PixelGrid = {
+    verifyRectangular(left)
+    verifyRectangular(right)
+    require(left(0).length == right(0).length, "left and right must have same hight")
+    val result = left ++ right
+    verifyRectangular(result)
+    result
+  }
+
+  def appendVertically(top: PixelGrid, bottom: PixelGrid): PixelGrid = {
+    verifyRectangular(top)
+    verifyRectangular(bottom)
+    require(top.length == bottom.length, "top and bottom must have same width")
+    val indexedTop = top.zipWithIndex
+    val result = indexedTop map {case(column, index) => column ++ bottom(index)}
+    verifyRectangular(result)
+    result
+  }
+
+  abstract class GridTransform(val inWidth: Int, val inHeight: Int /*, val outWidth: Int, val outHeight: Int*/)
+    extends Function1[PixelGrid, PixelGrid] {
+    require(inWidth > 0) // design by contract
+    require(inHeight > 0)
+    // require(outWidth > 0)
+    // require(outHeight > 0)
+
+    final def inHook(inGrid: PixelGrid): Unit = {
+      verifyRectangular(inGrid)
+      /// require(inGrid.length == inWidth)
+      SDebug.traceCode(inWidth)
+      SDebug.traceCode(inGrid.length)
+      SDebug.traceCode(inGrid(0).length)
+      require(inGrid.length % inWidth == 0)
+      // require(inGrid(0).length == inHeight)
+      require(inGrid(0).length % inHeight == 0)
+    }
+    final def apply(inGrid: PixelGrid): PixelGrid = {
+      inHook(inGrid)
+      val outGrid = makeGrid(inGrid)
+      outHook(outGrid)
+      Debug.trace("Transformed a grid")
+      outGrid
+    }
+    def makeGrid(in: PixelGrid): PixelGrid
+    final def outHook(outGrid: PixelGrid): Unit = {
+      verifyRectangular(outGrid) // this should be checked by dependent types
+      SDebug.traceCode(outGrid.length)
+      SDebug.traceCode(outGrid(0).length)
+    }
+  }
+
+  final def verifyRectangular(grid: Seq[Seq[Pixel]]): Unit = {
+    require(grid.length > 0)
+    require(grid(0).length > 0)
+    val firstColumn = grid(0)
+    val firstColumnLength = firstColumn.length
+    SDebug.traceCode(firstColumnLength)
+    SDebug.traceCode(grid.length)
+    for(i <- 0 until grid.length) {
+      val columnLength = grid(i).length
+      require(columnLength == firstColumnLength, "length of grid must be uniform for all i")
+    }
+  }
+  case class Display(screen:PixelGrid) {
+    verifyRectangular(screen)
+    val width = screen.length
+    val height = screen(0).length
+    require(width > 0)
+    require(height > 0)
+
+    // assume that (0, 0) is thetop left corner.
+     // first dim width (left-right), second dim height (top-bottom)
+
+    val gcdWidthHeight = greatestCommonDivisor(width, height)
+    val aspectRatioWidth = width / gcdWidthHeight
+    val aspectRatioHeight = height / gcdWidthHeight
+    val aspectRatio = aspectRatioWidth.toDouble / aspectRatioWidth.toDouble
+
+    def resize(transformation: GridTransform): Display = {
+      require(transformation.inWidth <= width, "The unit of transformation cannot be wider than the display")
+      require(transformation.inHeight <= height, "The unit of transformation cannot be taller than the display")
+      var rightIndex = transformation.inWidth
+      var bottomIndex = transformation.inHeight
+      var toAppendVertical:PixelGrid = Vector[Vector[Pixel]]()
+      while(rightIndex <= width) {
+        val cutOutHorizontally = screen.slice(rightIndex-transformation.inWidth, rightIndex)
+        var toAppendHorizontal:PixelGrid = Vector[Vector[Pixel]]()
+        while(bottomIndex <= height) {
+          val sliceStart = bottomIndex-transformation.inHeight  //transformation.inHeight
+          val sliceEnd = bottomIndex
+
+          // this slice operation needs to be a for loop because we have to slice every element from left to right
+          val cutOutVertically:Seq[Seq[Monitor.Pixel]] = cutOutHorizontally.slice(sliceStart, sliceEnd) // these are equal
+
+          Debug.trace(cutOutVertically.length) // 0 // I am curring from 2 to 4 but the result is empty vector.
+          Debug.trace(cutOutVertically(0).length)
+          val result:PixelGrid = transformation(cutOutVertically) // grid.length == 0
+          if(toAppendHorizontal.isEmpty) {
+            toAppendHorizontal = result
+          } else {
+            toAppendHorizontal = appendHorizontally(toAppendHorizontal, result)
+          }
+          bottomIndex += transformation.inHeight
+        }
+        if(toAppendVertical.isEmpty) {
+          toAppendVertical = toAppendHorizontal
+        } else {
+          toAppendVertical = appendVertically(toAppendVertical, toAppendHorizontal)
+        }
+        rightIndex += transformation.inWidth
+      }
+      Display(toAppendVertical)
+    }
+
+    @tailrec
+    private def greatestCommonDivisor(a: Int, b: Int): Int = {
+      if (b == 0) a
+      else greatestCommonDivisor(b, a % b)
+    }
+  }
+}
+
+/*
+  def verifyDividesEvenly(grid1: Seq[Seq[Pixel]], grid2: Seq[Seq[Pixel]]) = {
+    verifyRectangular(grid1)
+    verifyRectangular(grid2)
+    val height1 = grid1.length
+    val height2 = grid2.length
+    val biggerHeight = Math.max(height1, height2)
+    val length1 = grid1(0).length
+    val length2 = grid2(0).length
+    val biggerLength = Math.max(length1, length2)
+    require(biggerHeight % height1 == 0)
+    require(biggerHeight % height2 == 0)
+    require(biggerHeight % length1 == 0)
+    require(biggerHeight % length2 == 0)
+  }
+ */

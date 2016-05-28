@@ -1,0 +1,45 @@
+import shapeless._
+import shapeless.nat._
+
+/**
+  * Created by johnreed on 5/19/16.
+  */
+class Monitor {
+
+  sealed trait Color
+
+  case class Black() extends Color
+
+  case class White() extends Color
+
+  case class Pixel(color: Color = Black(), brightness: Int = 0)
+
+  /*
+  case class PixelGrid[MyColumnsPerRowT <: shapeless.Nat](
+                                                           myColumns: Seq[Sized[IndexedSeq[Pixel], MyColumnsPerRowT]]
+                                                         ) {
+    def appendToBottom[OtherColumnsPerRowT <: shapeless.Nat,
+    ResultColumnsPerRowT <: shapeless.Nat]
+    (otherColumns: PixelGrid[OtherColumnsPerRowT])
+    : PixelGrid[ResultColumnsPerRowT]
+    = {
+      val myColumnsZipped: Seq[(Sized[IndexedSeq[Pixel], MyColumnsPerRowT], Int)] =
+        myColumns.zipWithIndex
+      val theirColumns = otherColumns.myColumns
+      val result: Seq[Sized[IndexedSeq[Pixel], ResultColumnsPerRowT]]
+      = myColumnsZipped map ((elem) => {
+        val topPart: Sized[IndexedSeq[Pixel], MyColumnsPerRowT] = elem._1
+        val index = elem._2
+        val bottomPart: Sized[IndexedSeq[Pixel], OtherColumnsPerRowT] = theirColumns(index)
+        val result: Sized[IndexedSeq[Pixel], ResultColumnsPerRowT]
+          =
+          topPart ++ bottomPart // ignore IDE warning of type mismatch
+        result
+      })
+      val toReturn: PixelGrid[ResultColumnsPerRowT] =
+        PixelGrid[ResultColumnsPerRowT](result);
+      toReturn;
+    }
+  }
+  */
+}
