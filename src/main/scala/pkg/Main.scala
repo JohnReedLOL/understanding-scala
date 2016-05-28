@@ -152,10 +152,9 @@ object Main {
       def sayHi(): Unit = { println("Hi") }
     }
 
+    import scala.language.implicitConversions // just to be explicit
     implicit def wrapIntInWrapper(i: Int) = {new IntWrapper(i)}
-
     val six = 6
-
     six.sayHi() // Navigate > Implicit Conversion (Ctr + Shift + Q)
     wrapIntInWrapper(six).sayHi() // Make implicit into explicit with Alt + Enter
 
