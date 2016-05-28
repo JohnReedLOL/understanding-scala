@@ -1,0 +1,1037 @@
+[info] Compiling 1 Scala source to /home/johnreed/sbtProjects/episode1/target/scala-2.11/classes...
+[[syntax trees at end of                       jvm]] // Main.scala
+package pkg {
+  object Main extends Object {
+    private def Animal$1$lzycompute(x$1: runtime.VolatileObjectRef): pkg.Animal$3.type = {
+      {
+        Main.this.synchronized({
+          if (x$1.elem.eq(null))
+            {
+              x$1.elem = new pkg.Animal$3.type();
+              ()
+            };
+          scala.runtime.BoxedUnit.UNIT
+        });
+        null
+      };
+      x$1.elem.$asInstanceOf[pkg.Animal$3.type]()
+    };
+    private def caseBacterial$2$lzycompute(x$1: runtime.VolatileObjectRef): pkg.caseBacterial$4.type = {
+      {
+        Main.this.synchronized({
+          if (x$1.elem.eq(null))
+            {
+              x$1.elem = new pkg.caseBacterial$4.type();
+              ()
+            };
+          scala.runtime.BoxedUnit.UNIT
+        });
+        null
+      };
+      x$1.elem.$asInstanceOf[pkg.caseBacterial$4.type]()
+    };
+    private def mySingleton$1$lzycompute(x$1: runtime.VolatileObjectRef): pkg.mySingleton$2.type = {
+      {
+        Main.this.synchronized({
+          if (x$1.elem.eq(null))
+            {
+              x$1.elem = new pkg.mySingleton$2.type();
+              ()
+            };
+          scala.runtime.BoxedUnit.UNIT
+        });
+        null
+      };
+      x$1.elem.$asInstanceOf[pkg.mySingleton$2.type]()
+    };
+    private def anotherSingleton$1$lzycompute(x$1: runtime.VolatileObjectRef): pkg.anotherSingleton$2.type = {
+      {
+        Main.this.synchronized({
+          if (x$1.elem.eq(null))
+            {
+              x$1.elem = new pkg.anotherSingleton$2.type();
+              ()
+            };
+          scala.runtime.BoxedUnit.UNIT
+        });
+        null
+      };
+      x$1.elem.$asInstanceOf[pkg.anotherSingleton$2.type]()
+    };
+    def acceptString1(s: String): Unit = {
+      val result: String = s;
+      scala.this.Predef.println(s)
+    };
+    def acceptString2(stringFunc: Function0): Unit = {
+      val result1: Function0 = stringFunc;
+      val result2: String = stringFunc.apply().$asInstanceOf[String]();
+      val result3: String = stringFunc.apply().$asInstanceOf[String]();
+      scala.this.Predef.println(any2stringadd.this.+$extension(scala.this.Predef.any2stringadd(result1), "|").+(result2).+("|").+(result3))
+    };
+    def acceptString3(s: Function0): Unit = {
+      val result: String = s.apply().$asInstanceOf[String]();
+      scala.this.Predef.println(result)
+    };
+    def main(args: Array[String]): Unit = {
+      @volatile var Animal$module: runtime.VolatileObjectRef = scala.runtime.VolatileObjectRef.zero();
+      @volatile var caseBacterial$module: runtime.VolatileObjectRef = scala.runtime.VolatileObjectRef.zero();
+      lazy <artifact> var myLazy$lzy: runtime.IntRef = scala.runtime.IntRef.zero();
+      @volatile var mySingleton$module: runtime.VolatileObjectRef = scala.runtime.VolatileObjectRef.zero();
+      @volatile var anotherSingleton$module: runtime.VolatileObjectRef = scala.runtime.VolatileObjectRef.zero();
+      @volatile var bitmap$0: runtime.VolatileByteRef = scala.runtime.VolatileByteRef.create(0);
+      val string1: String = {
+        val left: String = "string";
+        val right: String = "1";
+        left.+(right)
+      };
+      Main.this.acceptString1(string1.+((" - pkg.Main.main(Main.scala:".+(scala.Int.box(34)).+(")"): String)));
+      val string2: Function0 = {
+        new <$anon: Function0>()
+      };
+      Main.this.acceptString2(string2);
+      Main.this.acceptString3({
+        (new <$anon: Function0>(): Function0)
+      });
+      val stringArray1: Array[String] = new Array[String](2);
+      val stringArray2: Array[Int] = Array[Int]{1, 2, 3};
+      val stringArray3: Array[String] = Array[String]{"1", "2", "3"}.$asInstanceOf[Array[Object]]().$asInstanceOf[Array[String]]();
+      val three: Int = 3;
+      val sequenceOfWhateverType: Seq = immutable.this.List.apply(scala.this.Predef.wrapIntArray(Array[Int]{1, 2, 3}));
+      Main.this.acceptExistential1$1(sequenceOfWhateverType);
+      Main.this.acceptExistential2$1(sequenceOfWhateverType);
+      Main.this.acceptInts$1(immutable.this.List.apply(scala.this.Predef.wrapIntArray(Array[Int]{1, 2, 3})));
+      val sequenceOfWhateverType2: Seq = immutable.this.List.apply(scala.this.Predef.wrapRefArray(Array[String]{"1", "2", "3"}.$asInstanceOf[Array[Object]]()));
+      val crazyName_!@<>\=*&^%~~~~~~-=:: Int = 5;
+      scala.this.Predef.println(crazyName_!@<>\=*&^%~~~~~~-=:.+((" - pkg.Main.main(Main.scala:".+(scala.Int.box(81)).+(")"): String)));
+      scala.this.Predef.println("Hello World 1");
+      scala.this.Predef.println("Hello World 2".+((" - pkg.Main.main(Main.scala:".+(scala.Int.box(145)).+(")"): String)));
+      implicit val f: Int = 5;
+      Main.this.implicitFunc$1(f);
+      val implicitInt: Int = scala.Int.unbox(scala.this.Predef.implicitly(scala.Int.box(f)));
+      implicit val myImplicitFloat: Float = 7.4.toFloat();
+      val implicitFloat: Float = scala.Float.unbox(scala.this.Predef.implicitly(scala.Float.box(myImplicitFloat)));
+      scala.this.Predef.println(implicitFloat.+((" - pkg.Main.main(Main.scala:".+(scala.Int.box(163)).+(")"): String)));
+      val six: Int = 6;
+      Main.this.wrapIntInWrapper$1(six).sayHi();
+      Main.this.wrapIntInWrapper$1(six).sayHi();
+      Main.this.onlyTuples$1(new Tuple2$mcII$sp(1, 1), scala.this.Predef.$conforms());
+      val inclusiveRange: collection.immutable.Inclusive = RichInt.this.to$extension0(scala.this.Predef.intWrapper(1), 10);
+      val exclusiveRange: scala.collection.immutable.Range = RichInt.this.until$extension0(scala.this.Predef.intWrapper(1), 10);
+      RichInt.this.to$extension0(scala.this.Predef.intWrapper(1), 10).foreach$mVc$sp({
+        (new <$anon: Function1>(): Function1)
+      });
+      inclusiveRange.foreach$mVc$sp({
+        (new <$anon: Function1>(): Function1)
+      });
+      inclusiveRange.foreach$mVc$sp({
+        (new <$anon: Function1>(exclusiveRange): Function1)
+      });
+      var loopCounter: Int = 0;
+      while$1(){
+        if (loopCounter.<(10))
+          {
+            loopCounter = loopCounter.+(1);
+            while$1()
+          }
+        else
+          ()
+      };
+      val matrixCharacters: List = immutable.this.List.apply(scala.this.Predef.wrapRefArray(Array[String]{"neo", "smith", "trinity"}.$asInstanceOf[Array[Object]]()));
+      val toInts: Function1 = {
+        (new <$anon: Function1>(): Function1)
+      };
+      val listOfLists: List = matrixCharacters.map(toInts, immutable.this.List.canBuildFrom()).$asInstanceOf[List]();
+      val flatList: List = matrixCharacters.flatMap(toInts, immutable.this.List.canBuildFrom()).$asInstanceOf[List]();
+      val flatList2: List = matrixCharacters.flatMap({
+  (new <$anon: Function1>(toInts): Function1)
+}, immutable.this.List.canBuildFrom()).$asInstanceOf[List]();
+      val flatList3: List = matrixCharacters.flatMap({
+  (new <$anon: Function1>(toInts): Function1)
+}, immutable.this.List.canBuildFrom()).$asInstanceOf[List]();
+      val flatList4: List = matrixCharacters.flatMap(toInts, immutable.this.List.canBuildFrom()).$asInstanceOf[List]();
+      val outerList: List = immutable.this.List.apply(scala.this.Predef.wrapIntArray(Array[Int]{1, 2, 3}));
+      val productList1: List = outerList.flatMap({
+  (new <$anon: Function1>(): Function1)
+}, immutable.this.List.canBuildFrom()).$asInstanceOf[List]();
+      scala.trace.SDebug.traceContentsStdOut(productList1, scala.trace.SDebug.traceContentsStdOut$default$2(), scala.trace.SDebug.traceContentsStdOut$default$3(), scala.trace.SDebug.traceContentsStdOut$default$4(), (scala.reflect.runtime.`package`.universe().$asInstanceOf[reflect.api.TypeTags]().WeakTypeTag().Int(): reflect.api.WeakTypeTag));
+      Main.this.printAll$1(scala.this.Predef.wrapRefArray(Array[String]{"a", "b", "c", "d", "e", (" - pkg.Main.main(Main.scala:".+(scala.Int.box(239)).+(")"): String)}.$asInstanceOf[Array[Object]]()));
+      val innerList: List = immutable.this.List.apply(scala.this.Predef.wrapIntArray(Array[Int]{1, 2, 3}));
+      val productList2: List = immutable.this.List.apply(scala.this.Predef.wrapIntArray(Array[Int]{1, 2})).flatMap({
+  (new <$anon: Function1>(innerList): Function1)
+}, immutable.this.List.canBuildFrom()).$asInstanceOf[List]();
+      scala.trace.SDebug.traceContentsStdOut(productList2, scala.trace.SDebug.traceContentsStdOut$default$2(), scala.trace.SDebug.traceContentsStdOut$default$3(), scala.trace.SDebug.traceContentsStdOut$default$4(), (scala.reflect.runtime.`package`.universe().$asInstanceOf[reflect.api.TypeTags]().WeakTypeTag().Int(): reflect.api.WeakTypeTag));
+      val helloWorld: String = {
+        val hello: String = "hello";
+        val world: String = "world";
+        hello.+(world)
+      };
+      val nothing: scala.runtime.BoxedUnit = {
+        Main.this.returnNothing$1();
+        scala.runtime.BoxedUnit.UNIT
+      };
+      val pairs: List = immutable.this.List.apply(scala.this.Predef.wrapRefArray(Array[Tuple2]{new Tuple2("1", scala.Int.box(1)), new Tuple2("2", scala.Int.box(2))}.$asInstanceOf[Array[Object]]()));
+      pairs.foreach({
+        (new <$anon: Function1>(): Function1)
+      });
+      scala.this.Predef.println(Main.this.myLazy$1(myLazy$lzy, bitmap$0).+((" - pkg.Main.main(Main.scala:".+(scala.Int.box(285)).+(")"): String)));
+      scala.this.Predef.println(Main.this.myLazy$1(myLazy$lzy, bitmap$0).+((" - pkg.Main.main(Main.scala:".+(scala.Int.box(287)).+(")"): String)));
+      val return5value: Function0 = {
+        (new <$anon: Function0>(): Function0)
+      };
+      val fiveValue: Int = Main.this.return5Func$1();
+      scala.this.Predef.println(fiveValue.+((" - pkg.Main.main(Main.scala:".+(scala.Int.box(297)).+(")"): String)));
+      val addNoCurryingToVal: Function2 = {
+        {
+          (new <$anon: Function2>(): Function2)
+        }
+      };
+      val curryingAdditionValue: Function1 = {
+  {
+    (new <$anon: Function2>(): Function2)
+  }
+}.curried();
+      val addFive: Function1 = curryingAdditionValue.apply(scala.Int.box(5)).$asInstanceOf[Function1]();
+      val ten: Int = addFive.apply$mcII$sp(5);
+      scala.this.Predef.println(ten.+((" - pkg.Main.main(Main.scala:".+(scala.Int.box(316)).+(")"): String)));
+      val evilNull: Null = null;
+      val langs: List = immutable.this.List.apply(scala.this.Predef.wrapRefArray(Array[Tuple2]{new Tuple2("C++", "Stroustrup"), new Tuple2("Scala", "Odersky")}.$asInstanceOf[Array[Object]]()));
+      langs.foreach({
+        (new <$anon: Function1>(): Function1)
+      });
+      val boilerplateyPartialFunction: PartialFunction = {
+        new <$anon: Function1>()
+      };
+      try {
+        scala.this.Predef.println(any2stringadd.this.+$extension(scala.this.Predef.any2stringadd(scala.Boolean.box(boilerplateyPartialFunction.isDefinedAt(scala.Int.box(5)))), (" - pkg.Main.main(Main.scala:".+(scala.Int.box(358)).+(")"): String)));
+        scala.this.Predef.println(boilerplateyPartialFunction.apply(scala.Int.box(5)).$asInstanceOf[String]().+((" - pkg.Main.main(Main.scala:".+(scala.Int.box(359)).+(")"): String)))
+      } catch {
+        case (_: MatchError) => scala.this.Predef.println("Is not defined".+((" - pkg.Main.main(Main.scala:".+(scala.Int.box(361)).+(")"): String)))
+      };
+      val partialFunction: PartialFunction = ({
+        new <$anon: Function1>()
+      }: PartialFunction);
+      val wholeFunction: PartialFunction = boilerplateyPartialFunction.orElse(partialFunction);
+      val foo: String = "foo";
+      scala.trace.`package`.implicitlyPrintable(foo.+((" - pkg.Main.main(Main.scala:".+(scala.Int.box(374)).+(")"): String))).println();
+      val existentialTypeList: List = immutable.this.List.apply(scala.this.Predef.wrapIntArray(Array[Int]{1, 2, 3}));
+      val listOfInt: List = immutable.this.List.apply(scala.this.Predef.wrapIntArray(Array[Int]{1, 2, 3, 4}));
+      scala.this.Predef.println();
+      Main.this.takeInSingleton$1(Main.this.mySingleton$1(mySingleton$module));
+      val outer1: pkg.Outer$1 = new pkg.Outer$1();
+      val outer2: pkg.Outer$1 = {
+        new <$anon: pkg.Outer$1>()
+      };
+      ()
+    };
+    final private[this] def add$1(a: Int, b: Int): Int = a.+(b);
+    final private[this] def acceptExistential1$1(seq: Seq): String = scala.trace.SDebug.traceContentsStdOut(seq, scala.trace.SDebug.traceContentsStdOut$default$2(), scala.trace.SDebug.traceContentsStdOut$default$3(), scala.trace.SDebug.traceContentsStdOut$default$4(), ({
+      val $u: scala.reflect.api.JavaUniverse = scala.reflect.runtime.`package`.universe();
+      val $m: reflect.api.JavaMirror = scala.reflect.runtime.`package`.universe().runtimeMirror(this.getClass().getClassLoader());
+      $u.$asInstanceOf[reflect.api.TypeTags]().TypeTag().apply($m.$asInstanceOf[scala.reflect.api.Mirror](), {
+        new pkg.$typecreator1$1()
+      })
+    }: reflect.api.WeakTypeTag));
+    final private[this] def acceptExistential2$1(seq: Seq): String = scala.trace.SDebug.traceContentsStdOut(seq, scala.trace.SDebug.traceContentsStdOut$default$2(), scala.trace.SDebug.traceContentsStdOut$default$3(), scala.trace.SDebug.traceContentsStdOut$default$4(), ({
+      val $u: scala.reflect.api.JavaUniverse = scala.reflect.runtime.`package`.universe();
+      val $m: reflect.api.JavaMirror = scala.reflect.runtime.`package`.universe().runtimeMirror(this.getClass().getClassLoader());
+      $u.$asInstanceOf[reflect.api.TypeTags]().TypeTag().apply($m.$asInstanceOf[scala.reflect.api.Mirror](), {
+        new pkg.$typecreator2$1()
+      })
+    }: reflect.api.WeakTypeTag));
+    final private[this] def acceptInts$1(seq: Seq): Unit = ();
+    final <synthetic> <stable> def Animal$1(Animal$module$1: runtime.VolatileObjectRef): pkg.Animal$3.type = if (Animal$module$1.elem.eq(null))
+      Main.this.Animal$1$lzycompute(Animal$module$1)
+    else
+      Animal$module$1.elem.$asInstanceOf[pkg.Animal$3.type]();
+    final <synthetic> <stable> private[this] def caseBacterial$2(caseBacterial$module$1: runtime.VolatileObjectRef): pkg.caseBacterial$4.type = if (caseBacterial$module$1.elem.eq(null))
+      Main.this.caseBacterial$2$lzycompute(caseBacterial$module$1)
+    else
+      caseBacterial$module$1.elem.$asInstanceOf[pkg.caseBacterial$4.type]();
+    final private[this] def implicitFunc$1(implicit f: Int): Unit = scala.this.Predef.println(scala.Int.box(f));
+    final implicit private[this] def wrapIntInWrapper$1(i: Int): pkg.IntWrapper$1 = new pkg.IntWrapper$1(i);
+    final private[this] def onlyTuples$1(tuple: Object, evidence: <:<): Unit = ();
+    final private[this] def printAll$1(strings: Seq): Unit = {
+      val stringList: Seq = strings;
+      strings.foreach({
+        (new <$anon: Function1>(): Function1)
+      })
+    };
+    final private[this] def totallyUnnecessary$1(): Unit = ();
+    final private[this] def returnNothing$1(): Unit = {
+      val someThing: String = "something";
+      ()
+    };
+    @scala.annotation.tailrec final private[this] def tailRecursiveCount$1(i: Int): Int = {
+      <synthetic> val _$this: pkg.Main.type = Main.this;
+      _tailRecursiveCount(_$this: pkg.Main.type, i: Int){
+        (if (i.==(0))
+          {
+            scala.this.Predef.println("Done");
+            0
+          }
+        else
+          _tailRecursiveCount(Main.this, (i.-(1): Int)): Int)
+      }
+    };
+    final <stable> private[this] def myLazy$lzycompute$1(myLazy$lzy$1: runtime.IntRef, bitmap$0$1: runtime.VolatileByteRef): Int = {
+      {
+        Main.this.synchronized({
+          if (bitmap$0$1.elem.&(1).$asInstanceOf[Byte]().==(0))
+            {
+              myLazy$lzy$1.elem = {
+                scala.trace.Debug.traceStdOut("Lets get lazy", 3);
+                Main.this.tailRecursiveCount$1(2)
+              };
+              bitmap$0$1.elem = bitmap$0$1.elem.|(1).$asInstanceOf[Byte]();
+              ()
+            };
+          scala.runtime.BoxedUnit.UNIT
+        });
+        ()
+      };
+      myLazy$lzy$1.elem
+    };
+    final <stable> private[this] def myLazy$1(myLazy$lzy$1: runtime.IntRef, bitmap$0$1: runtime.VolatileByteRef): Int = if (bitmap$0$1.elem.&(1).$asInstanceOf[Byte]().==(0))
+      Main.this.myLazy$lzycompute$1(myLazy$lzy$1, bitmap$0$1)
+    else
+      myLazy$lzy$1.elem;
+    final def return5Func$1(): Int = 5;
+    final def addNoCurrying$1(a: Int, b: Int): Int = a.+(b);
+    final private[this] def curryingAdditionFunction$1(a: Int, b: Int): Int = a.+(b);
+    final private[this] def unimplemented$1(): Nothing = scala.this.Predef.???();
+    final <stable> private[this] def mySingleton$1(mySingleton$module$1: runtime.VolatileObjectRef): pkg.mySingleton$2.type = if (mySingleton$module$1.elem.eq(null))
+      Main.this.mySingleton$1$lzycompute(mySingleton$module$1)
+    else
+      mySingleton$module$1.elem.$asInstanceOf[pkg.mySingleton$2.type]();
+    final <stable> private[this] def anotherSingleton$1(anotherSingleton$module$1: runtime.VolatileObjectRef): pkg.anotherSingleton$2.type = if (anotherSingleton$module$1.elem.eq(null))
+      Main.this.anotherSingleton$1$lzycompute(anotherSingleton$module$1)
+    else
+      anotherSingleton$module$1.elem.$asInstanceOf[pkg.anotherSingleton$2.type]();
+    final private[this] def takeInSingleton$1(s: pkg.mySingleton$2.type): pkg.mySingleton$2.type = s;
+    def <init>(): pkg.Main.type = {
+      Main.super.<init>();
+      ()
+    }
+  };
+  final class $anon$2 extends Object with Function0 {
+    <specialized> def apply$mcZ$sp(): Boolean = scala.Function0$class.apply$mcZ$sp($anon$2.this);
+    <specialized> def apply$mcB$sp(): Byte = scala.Function0$class.apply$mcB$sp($anon$2.this);
+    <specialized> def apply$mcC$sp(): Char = scala.Function0$class.apply$mcC$sp($anon$2.this);
+    <specialized> def apply$mcD$sp(): Double = scala.Function0$class.apply$mcD$sp($anon$2.this);
+    <specialized> def apply$mcF$sp(): Float = scala.Function0$class.apply$mcF$sp($anon$2.this);
+    <specialized> def apply$mcI$sp(): Int = scala.Function0$class.apply$mcI$sp($anon$2.this);
+    <specialized> def apply$mcJ$sp(): Long = scala.Function0$class.apply$mcJ$sp($anon$2.this);
+    <specialized> def apply$mcS$sp(): Short = scala.Function0$class.apply$mcS$sp($anon$2.this);
+    <specialized> def apply$mcV$sp(): Unit = scala.Function0$class.apply$mcV$sp($anon$2.this);
+    override def toString(): String = scala.Function0$class.toString($anon$2.this);
+    override def apply(): String = return "string2";
+    override <bridge> <artifact> def apply(): Object = $anon$2.this.apply();
+    def <init>(): <$anon: Function0> = {
+      $anon$2.super.<init>();
+      scala.Function0$class./*Function0$class*/$init$($anon$2.this);
+      ()
+    }
+  };
+  @SerialVersionUID(value = 0) final <synthetic> class $anonfun$main$4 extends scala.runtime.AbstractFunction0 with Serializable {
+    final def apply(): String = {
+      scala.this.Predef.println("Hey we are getting string 3".+((" - pkg.Main.main(Main.scala:".+(scala.Int.box(47)).+(")"): String)));
+      "string3"
+    };
+    final <bridge> <artifact> def apply(): Object = $anonfun$main$4.this.apply();
+    def <init>(): <$anon: Function0> = {
+      $anonfun$main$4.super.<init>();
+      ()
+    }
+  };
+  final class $typecreator1$1 extends scala.reflect.api.TypeCreator {
+    def apply($m$untyped: scala.reflect.api.Mirror): reflect.api.TypeApi = {
+      val $u: scala.reflect.api.Universe = $m$untyped.universe();
+      val $m: scala.reflect.api.Mirror = $m$untyped;
+      val symdef$acceptExistential11: reflect.api.SymbolApi = $u.internal().reificationSupport().newNestedSymbol($u.internal().reificationSupport().selectTerm($m.staticModule("pkg.Main").asModule().moduleClass(), "main"), $u.TermName().apply("acceptExistential1").$asInstanceOf[reflect.api.NameApi](), $u.NoPosition(), $u.internal().reificationSupport().FlagsRepr().apply(549755813952L), false);
+      val symdef$Whatever1: reflect.api.SymbolApi = $u.internal().reificationSupport().newNestedSymbol(symdef$acceptExistential11, $u.TypeName().apply("Whatever").$asInstanceOf[reflect.api.NameApi](), $u.NoPosition(), $u.internal().reificationSupport().FlagsRepr().apply(34359738384L), false);
+      $u.internal().reificationSupport().setInfo(symdef$acceptExistential11, $u.NoType());
+      $u.internal().reificationSupport().setInfo(symdef$Whatever1, $u.internal().reificationSupport().TypeBounds($m.staticClass("scala.Nothing").asType().toTypeConstructor(), $m.staticClass("scala.Any").asType().toTypeConstructor()).$asInstanceOf[reflect.api.TypeApi]());
+      $u.internal().reificationSupport().TypeRef($u.NoPrefix(), symdef$Whatever1, immutable.this.Nil)
+    };
+    def <init>(): pkg.$typecreator1$1 = {
+      $typecreator1$1.super.<init>();
+      ()
+    }
+  };
+  final class $typecreator2$1 extends scala.reflect.api.TypeCreator {
+    def apply($m$untyped: scala.reflect.api.Mirror): reflect.api.TypeApi = {
+      val $u: scala.reflect.api.Universe = $m$untyped.universe();
+      val $m: scala.reflect.api.Mirror = $m$untyped;
+      val symdef$acceptExistential21: reflect.api.SymbolApi = $u.internal().reificationSupport().newNestedSymbol($u.internal().reificationSupport().selectTerm($m.staticModule("pkg.Main").asModule().moduleClass(), "main"), $u.TermName().apply("acceptExistential2").$asInstanceOf[reflect.api.NameApi](), $u.NoPosition(), $u.internal().reificationSupport().FlagsRepr().apply(549755813952L), false);
+      val symdef$_$11: reflect.api.SymbolApi = $u.internal().reificationSupport().newNestedSymbol(symdef$acceptExistential21, $u.TypeName().apply("_$1").$asInstanceOf[reflect.api.NameApi](), $u.NoPosition(), $u.internal().reificationSupport().FlagsRepr().apply(34359738384L), false);
+      $u.internal().reificationSupport().setInfo(symdef$acceptExistential21, $u.NoType());
+      $u.internal().reificationSupport().setInfo(symdef$_$11, $u.internal().reificationSupport().TypeBounds($m.staticClass("scala.Nothing").asType().toTypeConstructor(), $m.staticClass("scala.Any").asType().toTypeConstructor()).$asInstanceOf[reflect.api.TypeApi]());
+      $u.internal().reificationSupport().TypeRef($u.NoPrefix(), symdef$_$11, immutable.this.Nil)
+    };
+    def <init>(): pkg.$typecreator2$1 = {
+      $typecreator2$1.super.<init>();
+      ()
+    }
+  };
+  abstract trait Motion$1 extends Object {
+    <stable> <accessor> def privateWithThis(): Int;
+    <accessor> def privateWithThis_=(x$1: Int): Unit;
+    <accessor> def pkg$Main$Motion$1$_setter_$protectedWithThis_=(x$1: Int): Unit;
+    <accessor> def privateInMotion_=(x$1: Int): Unit;
+    <accessor> def pkg$Main$Motion$1$_setter_$protectedInMotion_=(x$1: Int): Unit;
+    <accessor> def pkg$Main$Motion$1$_setter_$publicVal_=(x$1: String): Unit;
+    <stable> <accessor> def protectedWithThis(): Int;
+    <stable> <accessor> private[Motion$1] def privateInMotion(): Int;
+    <stable> <accessor> private[Motion$1] def protectedInMotion(): Int;
+    <stable> <accessor> def publicVal(): String;
+    <accessor> def numMotions(): Int;
+    @runtime.TraitSetter <accessor> def numMotions_=(x$1: Int): Unit;
+    def move(): Unit;
+    def returnMe(): pkg.Motion$1;
+    def returnMotion(): pkg.Motion$1
+  };
+  abstract class Animal$2 extends Object {
+    <paramaccessor> private[this] val isMulticellular: Boolean = _;
+    <stable> <accessor> <paramaccessor> def isMulticellular(): Boolean = Animal$2.this.isMulticellular;
+    private[this] val packagePrivate: Int = _;
+    <stable> <accessor> private[pkg] def packagePrivate(): Int = Animal$2.this.packagePrivate;
+    private[this] val tuple: Tuple3 = _;
+    <stable> <accessor> protected[pkg] def tuple(): Tuple3 = Animal$2.this.tuple;
+    def <init>(isMulticellular: Boolean): pkg.Animal$2 = {
+      Animal$2.this.isMulticellular = isMulticellular;
+      Animal$2.super.<init>();
+      Animal$2.this.packagePrivate = 5;
+      Animal$2.this.tuple = new Tuple3(scala.Int.box(1), scala.Int.box(2), scala.Int.box(3));
+      ()
+    }
+  };
+  <synthetic> object Animal$3 extends Object {
+    <synthetic> def <init>$default$1(): Boolean = true;
+    def <init>(): pkg.Animal$3.type = {
+      Animal$3.super.<init>();
+      ()
+    }
+  };
+  class Person1$1 extends pkg.Animal$2 with pkg.Motion$1 {
+    <stable> <accessor> def protectedWithThis(): Int = Person1$1.this.protectedWithThis;
+    private[this] val protectedWithThis: Int = _;
+    <stable> <accessor> private[Motion$1] def protectedInMotion(): Int = Person1$1.this.protectedInMotion;
+    private[this] val protectedInMotion: Int = _;
+    <stable> <accessor> def publicVal(): String = Person1$1.this.publicVal;
+    private[this] val publicVal: String = _;
+    <accessor> def numMotions(): Int = Person1$1.this.numMotions;
+    private[this] var numMotions: Int = _;
+    @runtime.TraitSetter <accessor> def numMotions_=(x$1: Int): Unit = {
+      Person1$1.this.numMotions = x$1;
+      ()
+    };
+    <stable> <accessor> private[Motion$1] def privateInMotion(): Int = Person1$1.this.privateInMotion;
+    private[this] val privateInMotion: Int = _;
+    <stable> <accessor> def privateWithThis(): Int = Person1$1.this.privateWithThis;
+    private[this] val privateWithThis: Int = _;
+    <accessor> def privateWithThis_=(x$1: Int): Unit = {
+      Person1$1.this.privateWithThis = x$1;
+      ()
+    };
+    <accessor> def pkg$Main$Motion$1$_setter_$protectedWithThis_=(x$1: Int): Unit = {
+      Person1$1.this.protectedWithThis = x$1;
+      ()
+    };
+    <accessor> def privateInMotion_=(x$1: Int): Unit = {
+      Person1$1.this.privateInMotion = x$1;
+      ()
+    };
+    <accessor> def pkg$Main$Motion$1$_setter_$protectedInMotion_=(x$1: Int): Unit = {
+      Person1$1.this.protectedInMotion = x$1;
+      ()
+    };
+    <accessor> def pkg$Main$Motion$1$_setter_$publicVal_=(x$1: String): Unit = {
+      Person1$1.this.publicVal = x$1;
+      ()
+    };
+    def move(): Unit = pkg.Main$Motion$1$class.move(Person1$1.this);
+    <paramaccessor> private[this] val name: String = _;
+    <stable> <accessor> <paramaccessor> def name(): String = Person1$1.this.name;
+    <paramaccessor> private[this] val age: Int = _;
+    <stable> <accessor> <paramaccessor> def age(): Int = Person1$1.this.age;
+    def printOther(other: pkg.Person1$1): Unit = {
+      scala.this.Predef.println(scala.Int.box(this.protectedWithThis()));
+      scala.this.Predef.println(scala.Int.box(other.protectedInMotion()))
+    };
+    override def returnMotion(): pkg.Person1$1 = this;
+    override def returnMe(): pkg.Person1$1 = this;
+    override <bridge> <artifact> def returnMe(): pkg.Motion$1 = Person1$1.this.returnMe();
+    override <bridge> <artifact> def returnMotion(): pkg.Motion$1 = Person1$1.this.returnMotion();
+    def <init>(name: String, age: Int, Animal$module$1: runtime.VolatileObjectRef): pkg.Person1$1 = {
+      Person1$1.this.name = name;
+      Person1$1.this.age = age;
+      Person1$1.super.<init>(pkg.Main.Animal$1(Animal$module$1).<init>$default$1());
+      pkg.Main$Motion$1$class./*Motion$1$class*/$init$(Person1$1.this);
+      scala.this.Predef.println(scala.Int.box(Person1$1.this.packagePrivate()));
+      scala.this.Predef.println(Person1$1.this.publicVal());
+      scala.this.Predef.println(scala.Int.box(this.protectedWithThis()));
+      ()
+    }
+  };
+  class Person2$1 extends pkg.Animal$2 with pkg.Motion$1 {
+    <stable> <accessor> def protectedWithThis(): Int = Person2$1.this.protectedWithThis;
+    private[this] val protectedWithThis: Int = _;
+    <stable> <accessor> private[Motion$1] def protectedInMotion(): Int = Person2$1.this.protectedInMotion;
+    private[this] val protectedInMotion: Int = _;
+    <stable> <accessor> def publicVal(): String = Person2$1.this.publicVal;
+    private[this] val publicVal: String = _;
+    <accessor> def numMotions(): Int = Person2$1.this.numMotions;
+    private[this] var numMotions: Int = _;
+    @runtime.TraitSetter <accessor> def numMotions_=(x$1: Int): Unit = {
+      Person2$1.this.numMotions = x$1;
+      ()
+    };
+    <stable> <accessor> private[Motion$1] def privateInMotion(): Int = Person2$1.this.privateInMotion;
+    private[this] val privateInMotion: Int = _;
+    <stable> <accessor> def privateWithThis(): Int = Person2$1.this.privateWithThis;
+    private[this] val privateWithThis: Int = _;
+    <accessor> def privateWithThis_=(x$1: Int): Unit = {
+      Person2$1.this.privateWithThis = x$1;
+      ()
+    };
+    <accessor> def pkg$Main$Motion$1$_setter_$protectedWithThis_=(x$1: Int): Unit = {
+      Person2$1.this.protectedWithThis = x$1;
+      ()
+    };
+    <accessor> def privateInMotion_=(x$1: Int): Unit = {
+      Person2$1.this.privateInMotion = x$1;
+      ()
+    };
+    <accessor> def pkg$Main$Motion$1$_setter_$protectedInMotion_=(x$1: Int): Unit = {
+      Person2$1.this.protectedInMotion = x$1;
+      ()
+    };
+    <accessor> def pkg$Main$Motion$1$_setter_$publicVal_=(x$1: String): Unit = {
+      Person2$1.this.publicVal = x$1;
+      ()
+    };
+    def move(): Unit = pkg.Main$Motion$1$class.move(Person2$1.this);
+    <paramaccessor> private[this] val name: String = _;
+    <stable> <accessor> <paramaccessor> def name(): String = Person2$1.this.name;
+    <paramaccessor> private[this] val age: Int = _;
+    <stable> <accessor> <paramaccessor> def age(): Int = Person2$1.this.age;
+    override def returnMe(): pkg.Person2$1 = this;
+    override def returnMotion(): pkg.Motion$1 = this;
+    override <bridge> <artifact> def returnMe(): pkg.Motion$1 = Person2$1.this.returnMe();
+    def <init>(name: String, age: Int, Animal$module$1: runtime.VolatileObjectRef): pkg.Person2$1 = {
+      Person2$1.this.name = name;
+      Person2$1.this.age = age;
+      Person2$1.super.<init>(pkg.Main.Animal$1(Animal$module$1).<init>$default$1());
+      pkg.Main$Motion$1$class./*Motion$1$class*/$init$(Person2$1.this);
+      ()
+    }
+  };
+  case class caseBacterial$3 extends pkg.Animal$2 with Product with Serializable {
+    <caseaccessor> <paramaccessor> private[this] val name: String = _;
+    <stable> <caseaccessor> <accessor> <paramaccessor> def name(): String = caseBacterial$3.this.name;
+    <synthetic> def copy(name: String): pkg.caseBacterial$3 = new pkg.caseBacterial$3(name);
+    <synthetic> def copy$default$1(): String = caseBacterial$3.this.name();
+    override <synthetic> def productPrefix(): String = "caseBacterial";
+    <synthetic> def productArity(): Int = 1;
+    <synthetic> def productElement(x$1: Int): Object = {
+      case <synthetic> val x1: Int = x$1;
+      (x1: Int) match {
+        case 0 => caseBacterial$3.this.name()
+        case _ => throw new IndexOutOfBoundsException(scala.Int.box(x$1).toString())
+      }
+    };
+    override <synthetic> def productIterator(): Iterator = runtime.this.ScalaRunTime.typedProductIterator(caseBacterial$3.this);
+    <synthetic> def canEqual(x$1: Object): Boolean = x$1.$isInstanceOf[pkg.caseBacterial$3]();
+    override <synthetic> def hashCode(): Int = ScalaRunTime.this._hashCode(caseBacterial$3.this);
+    override <synthetic> def toString(): String = ScalaRunTime.this._toString(caseBacterial$3.this);
+    override <synthetic> def equals(x$1: Object): Boolean = caseBacterial$3.this.eq(x$1).||({
+  case <synthetic> val x1: Object = x$1;
+  case5(){
+    if (x1.$isInstanceOf[pkg.caseBacterial$3]())
+      matchEnd4(true)
+    else
+      case6()
+  };
+  case6(){
+    matchEnd4(false)
+  };
+  matchEnd4(x: Boolean){
+    x
+  }
+}.&&({
+      <synthetic> val caseBacterial$1: pkg.caseBacterial$3 = x$1.$asInstanceOf[pkg.caseBacterial$3]();
+      caseBacterial$3.this.name().==(caseBacterial$1.name()).&&(caseBacterial$1.canEqual(caseBacterial$3.this))
+    }));
+    def <init>(name: String): pkg.caseBacterial$3 = {
+      caseBacterial$3.this.name = name;
+      caseBacterial$3.super.<init>(false);
+      scala.Product$class./*Product$class*/$init$(caseBacterial$3.this);
+      ()
+    }
+  };
+  <synthetic> object caseBacterial$4 extends scala.runtime.AbstractFunction1 with Serializable {
+    final override <synthetic> def toString(): String = "caseBacterial";
+    case <synthetic> def apply(name: String): pkg.caseBacterial$3 = new pkg.caseBacterial$3(name);
+    case <synthetic> def unapply(x$0: pkg.caseBacterial$3): Option = if (x$0.==(null))
+      scala.this.None
+    else
+      new Some(x$0.name());
+    case <synthetic> <bridge> <artifact> def apply(v1: Object): Object = caseBacterial$4.this.apply(v1.$asInstanceOf[String]());
+    def <init>(): pkg.caseBacterial$4.type = {
+      caseBacterial$4.super.<init>();
+      ()
+    }
+  };
+  final class IntWrapper$1 extends Object {
+    <paramaccessor> private[this] val i: Int = _;
+    <stable> <accessor> <paramaccessor> def i(): Int = IntWrapper$1.this.i;
+    def sayHi(): Unit = scala.this.Predef.println("Hi");
+    def <init>(i: Int): pkg.IntWrapper$1 = {
+      IntWrapper$1.this.i = i;
+      IntWrapper$1.super.<init>();
+      ()
+    }
+  };
+  @SerialVersionUID(value = 0) final <synthetic> class $anonfun$main$1 extends scala.runtime.AbstractFunction1$mcVI$sp with Serializable {
+    final def apply(i: Int): Unit = $anonfun$main$1.this.apply$mcVI$sp(i);
+    <specialized> def apply$mcVI$sp(i: Int): Unit = ();
+    final <bridge> <artifact> def apply(v1: Object): Object = {
+      $anonfun$main$1.this.apply(scala.Int.unbox(v1));
+      scala.runtime.BoxedUnit.UNIT
+    };
+    def <init>(): <$anon: Function1> = {
+      $anonfun$main$1.super.<init>();
+      ()
+    }
+  };
+  @SerialVersionUID(value = 0) final <synthetic> class $anonfun$main$2 extends scala.runtime.AbstractFunction1$mcVI$sp with Serializable {
+    final def apply(i: Int): Unit = $anonfun$main$2.this.apply$mcVI$sp(i);
+    <specialized> def apply$mcVI$sp(i: Int): Unit = scala.this.Predef.println(i.+((" - pkg.Main.$anonfun(Main.scala:".+(scala.Int.box(187)).+(")"): String)));
+    final <bridge> <artifact> def apply(v1: Object): Object = {
+      $anonfun$main$2.this.apply(scala.Int.unbox(v1));
+      scala.runtime.BoxedUnit.UNIT
+    };
+    def <init>(): <$anon: Function1> = {
+      $anonfun$main$2.super.<init>();
+      ()
+    }
+  };
+  @SerialVersionUID(value = 0) final <synthetic> class $anonfun$main$3 extends scala.runtime.AbstractFunction1$mcVI$sp with Serializable {
+    final def apply(i: Int): Unit = $anonfun$main$3.this.apply$mcVI$sp(i);
+    <specialized> def apply$mcVI$sp(i: Int): Unit = $anonfun$main$3.this.exclusiveRange$1.foreach$mVc$sp({
+      (new <$anon: Function1>($anonfun$main$3.this): Function1)
+    });
+    final <bridge> <artifact> def apply(v1: Object): Object = {
+      $anonfun$main$3.this.apply(scala.Int.unbox(v1));
+      scala.runtime.BoxedUnit.UNIT
+    };
+    <synthetic> <paramaccessor> private[this] val exclusiveRange$1: scala.collection.immutable.Range = _;
+    def <init>(exclusiveRange$1: scala.collection.immutable.Range): <$anon: Function1> = {
+      $anonfun$main$3.this.exclusiveRange$1 = exclusiveRange$1;
+      $anonfun$main$3.super.<init>();
+      ()
+    }
+  };
+  @SerialVersionUID(value = 0) final <synthetic> class $anonfun$apply$mcVI$sp$1 extends scala.runtime.AbstractFunction1$mcVI$sp with Serializable {
+    final def apply(i: Int): Unit = $anonfun$apply$mcVI$sp$1.this.apply$mcVI$sp(i);
+    <specialized> def apply$mcVI$sp(i: Int): Unit = ();
+    final <bridge> <artifact> def apply(v1: Object): Object = {
+      $anonfun$apply$mcVI$sp$1.this.apply(scala.Int.unbox(v1));
+      scala.runtime.BoxedUnit.UNIT
+    };
+    def <init>($outer: <$anon: Function1>): <$anon: Function1> = {
+      $anonfun$apply$mcVI$sp$1.super.<init>();
+      ()
+    }
+  };
+  @SerialVersionUID(value = 0) final <synthetic> class $anonfun$5 extends scala.runtime.AbstractFunction1 with Serializable {
+    final def apply(str: String): List = {
+      val numbers: scala.collection.immutable.IndexedSeq = new collection.immutable.StringOps(scala.this.Predef.augmentString(str)).map({
+  (new <$anon: Function1>($anonfun$5.this): Function1)
+}, scala.this.Predef.fallbackStringCanBuildFrom()).$asInstanceOf[scala.collection.immutable.IndexedSeq]();
+      numbers.toList()
+    };
+    final <bridge> <artifact> def apply(v1: Object): Object = $anonfun$5.this.apply(v1.$asInstanceOf[String]());
+    def <init>(): <$anon: Function1> = {
+      $anonfun$5.super.<init>();
+      ()
+    }
+  };
+  @SerialVersionUID(value = 0) final <synthetic> class $anonfun$6 extends scala.runtime.AbstractFunction1 with Serializable {
+    final def apply(char: Char): Int = char.toInt();
+    final <bridge> <artifact> def apply(v1: Object): Object = scala.Int.box($anonfun$6.this.apply(scala.Char.unbox(v1)));
+    def <init>($outer: <$anon: Function1>): <$anon: Function1> = {
+      $anonfun$6.super.<init>();
+      ()
+    }
+  };
+  @SerialVersionUID(value = 0) final <synthetic> class $anonfun$7 extends scala.runtime.AbstractFunction1 with Serializable {
+    final def apply(character: String): List = $anonfun$7.this.toInts$1.apply(character).$asInstanceOf[List]().map({
+  (new <$anon: Function1>($anonfun$7.this): Function1)
+}, immutable.this.List.canBuildFrom()).$asInstanceOf[List]();
+    final <bridge> <artifact> def apply(v1: Object): Object = $anonfun$7.this.apply(v1.$asInstanceOf[String]());
+    <synthetic> <paramaccessor> private[this] val toInts$1: Function1 = _;
+    def <init>(toInts$1: Function1): <$anon: Function1> = {
+      $anonfun$7.this.toInts$1 = toInts$1;
+      $anonfun$7.super.<init>();
+      ()
+    }
+  };
+  @SerialVersionUID(value = 0) final <synthetic> class $anonfun$apply$1 extends scala.runtime.AbstractFunction1$mcII$sp with Serializable {
+    final def apply(int: Int): Int = $anonfun$apply$1.this.apply$mcII$sp(int);
+    <specialized> def apply$mcII$sp(int: Int): Int = int;
+    final <bridge> <artifact> def apply(v1: Object): Object = scala.Int.box($anonfun$apply$1.this.apply(scala.Int.unbox(v1)));
+    def <init>($outer: <$anon: Function1>): <$anon: Function1> = {
+      $anonfun$apply$1.super.<init>();
+      ()
+    }
+  };
+  @SerialVersionUID(value = 0) final <synthetic> class $anonfun$8 extends scala.runtime.AbstractFunction1 with Serializable {
+    final def apply(character: String): List = $anonfun$8.this.toInts$1.apply(character).$asInstanceOf[List]();
+    final <bridge> <artifact> def apply(v1: Object): Object = $anonfun$8.this.apply(v1.$asInstanceOf[String]());
+    <synthetic> <paramaccessor> private[this] val toInts$1: Function1 = _;
+    def <init>(toInts$1: Function1): <$anon: Function1> = {
+      $anonfun$8.this.toInts$1 = toInts$1;
+      $anonfun$8.super.<init>();
+      ()
+    }
+  };
+  @SerialVersionUID(value = 0) final <synthetic> class $anonfun$9 extends scala.runtime.AbstractFunction1 with Serializable {
+    final def apply(element: Int): List = immutable.this.List.apply(scala.this.Predef.wrapIntArray(Array[Int]{1, 2})).map({
+  (new <$anon: Function1>($anonfun$9.this, element): Function1)
+}, immutable.this.List.canBuildFrom()).$asInstanceOf[List]();
+    final <bridge> <artifact> def apply(v1: Object): Object = $anonfun$9.this.apply(scala.Int.unbox(v1));
+    def <init>(): <$anon: Function1> = {
+      $anonfun$9.super.<init>();
+      ()
+    }
+  };
+  @SerialVersionUID(value = 0) final <synthetic> class $anonfun$apply$2 extends scala.runtime.AbstractFunction1$mcII$sp with Serializable {
+    final def apply(inner: Int): Int = $anonfun$apply$2.this.apply$mcII$sp(inner);
+    <specialized> def apply$mcII$sp(inner: Int): Int = inner.*($anonfun$apply$2.this.element$1);
+    final <bridge> <artifact> def apply(v1: Object): Object = scala.Int.box($anonfun$apply$2.this.apply(scala.Int.unbox(v1)));
+    <synthetic> <paramaccessor> private[this] val element$1: Int = _;
+    def <init>($outer: <$anon: Function1>, element$1: Int): <$anon: Function1> = {
+      $anonfun$apply$2.this.element$1 = element$1;
+      $anonfun$apply$2.super.<init>();
+      ()
+    }
+  };
+  @SerialVersionUID(value = 0) final <synthetic> class $anonfun$printAll$1$1 extends scala.runtime.AbstractFunction1 with Serializable {
+    final def apply(e: String): Unit = scala.this.Predef.println(e);
+    final <bridge> <artifact> def apply(v1: Object): Object = {
+      $anonfun$printAll$1$1.this.apply(v1.$asInstanceOf[String]());
+      scala.runtime.BoxedUnit.UNIT
+    };
+    def <init>(): <$anon: Function1> = {
+      $anonfun$printAll$1$1.super.<init>();
+      ()
+    }
+  };
+  @SerialVersionUID(value = 0) final <synthetic> class $anonfun$10 extends scala.runtime.AbstractFunction1 with Serializable {
+    final def apply(outer: Int): List = $anonfun$10.this.innerList$1.withFilter({
+  (new <$anon: Function1>($anonfun$10.this): Function1)
+}).map({
+  (new <$anon: Function1>($anonfun$10.this, outer): Function1)
+}, immutable.this.List.canBuildFrom()).$asInstanceOf[List]();
+    final <bridge> <artifact> def apply(v1: Object): Object = $anonfun$10.this.apply(scala.Int.unbox(v1));
+    <synthetic> <paramaccessor> private[this] val innerList$1: List = _;
+    def <init>(innerList$1: List): <$anon: Function1> = {
+      $anonfun$10.this.innerList$1 = innerList$1;
+      $anonfun$10.super.<init>();
+      ()
+    }
+  };
+  @SerialVersionUID(value = 0) final <synthetic> class $anonfun$apply$3 extends scala.runtime.AbstractFunction1$mcZI$sp with Serializable {
+    final def apply(inner: Int): Boolean = $anonfun$apply$3.this.apply$mcZI$sp(inner);
+    <specialized> def apply$mcZI$sp(inner: Int): Boolean = inner.<(3);
+    final <bridge> <artifact> def apply(v1: Object): Object = scala.Boolean.box($anonfun$apply$3.this.apply(scala.Int.unbox(v1)));
+    def <init>($outer: <$anon: Function1>): <$anon: Function1> = {
+      $anonfun$apply$3.super.<init>();
+      ()
+    }
+  };
+  @SerialVersionUID(value = 0) final <synthetic> class $anonfun$apply$4 extends scala.runtime.AbstractFunction1$mcII$sp with Serializable {
+    final def apply(inner: Int): Int = $anonfun$apply$4.this.apply$mcII$sp(inner);
+    <specialized> def apply$mcII$sp(inner: Int): Int = $anonfun$apply$4.this.outer$1.+(inner);
+    final <bridge> <artifact> def apply(v1: Object): Object = scala.Int.box($anonfun$apply$4.this.apply(scala.Int.unbox(v1)));
+    <synthetic> <paramaccessor> private[this] val outer$1: Int = _;
+    def <init>($outer: <$anon: Function1>, outer$1: Int): <$anon: Function1> = {
+      $anonfun$apply$4.this.outer$1 = outer$1;
+      $anonfun$apply$4.super.<init>();
+      ()
+    }
+  };
+  @SerialVersionUID(value = 0) final <synthetic> class $anonfun$main$5 extends scala.runtime.AbstractFunction1 with Serializable {
+    final def apply(pair: Tuple2): Unit = {
+      <synthetic> <artifact> private[this] val x$1: Tuple2 = {
+        case <synthetic> val x1: Tuple2 = (pair: Tuple2);
+        case4(){
+          if (x1.ne(null))
+            {
+              val strVal: String = x1._1().$asInstanceOf[String]();
+              val intVal: Int = x1._2$mcI$sp();
+              matchEnd3(new Tuple2(strVal, scala.Int.box(intVal)))
+            }
+          else
+            case5()
+        };
+        case5(){
+          matchEnd3(throw new MatchError(x1))
+        };
+        matchEnd3(x: Tuple2){
+          x
+        }
+      };
+      val strVal: String = x$1._1().$asInstanceOf[String]();
+      val intVal: Int = x$1._2$mcI$sp();
+      scala.this.Predef.println(strVal.+(" ").+(scala.Int.box(intVal)).+((" - pkg.Main.$anonfun(Main.scala:".+(scala.Int.box(267)).+(")"): String)))
+    };
+    final <bridge> <artifact> def apply(v1: Object): Object = {
+      $anonfun$main$5.this.apply(v1.$asInstanceOf[Tuple2]());
+      scala.runtime.BoxedUnit.UNIT
+    };
+    def <init>(): <$anon: Function1> = {
+      $anonfun$main$5.super.<init>();
+      ()
+    }
+  };
+  @SerialVersionUID(value = 0) final <synthetic> class $anonfun$1 extends scala.runtime.AbstractFunction0$mcI$sp with Serializable {
+    final def apply(): Int = $anonfun$1.this.apply$mcI$sp();
+    <specialized> def apply$mcI$sp(): Int = pkg.Main.return5Func$1();
+    final <bridge> <artifact> def apply(): Object = scala.Int.box($anonfun$1.this.apply());
+    def <init>(): <$anon: Function0> = {
+      $anonfun$1.super.<init>();
+      ()
+    }
+  };
+  @SerialVersionUID(value = 0) final <synthetic> class $anonfun$2 extends scala.runtime.AbstractFunction2$mcIII$sp with Serializable {
+    final def apply(a: Int, b: Int): Int = $anonfun$2.this.apply$mcIII$sp(a, b);
+    <specialized> def apply$mcIII$sp(a: Int, b: Int): Int = pkg.Main.addNoCurrying$1(a, b);
+    final <bridge> <artifact> def apply(v1: Object, v2: Object): Object = scala.Int.box($anonfun$2.this.apply(scala.Int.unbox(v1), scala.Int.unbox(v2)));
+    def <init>(): <$anon: Function2> = {
+      $anonfun$2.super.<init>();
+      ()
+    }
+  };
+  @SerialVersionUID(value = 0) final <synthetic> class $anonfun$3 extends scala.runtime.AbstractFunction2$mcIII$sp with Serializable {
+    final def apply(a: Int, b: Int): Int = $anonfun$3.this.apply$mcIII$sp(a, b);
+    <specialized> def apply$mcIII$sp(a: Int, b: Int): Int = pkg.Main.addNoCurrying$1(a, b);
+    final <bridge> <artifact> def apply(v1: Object, v2: Object): Object = scala.Int.box($anonfun$3.this.apply(scala.Int.unbox(v1), scala.Int.unbox(v2)));
+    def <init>(): <$anon: Function2> = {
+      $anonfun$3.super.<init>();
+      ()
+    }
+  };
+  @SerialVersionUID(value = 0) final <synthetic> class $anonfun$main$6 extends scala.runtime.AbstractFunction1 with Serializable {
+    final def apply(tuple: Tuple2): Unit = {
+      case <synthetic> val x1: Tuple2 = tuple;
+      case7(){
+        if (x1.ne(null))
+          {
+            <synthetic> val p2: String = x1._1().$asInstanceOf[String]();
+            if ("Scala".==(p2))
+              matchEnd6({
+                scala.this.Predef.println("Scala".+((" - pkg.Main.$anonfun(Main.scala:".+(scala.Int.box(334)).+(")"): String)));
+                scala.runtime.BoxedUnit.UNIT
+              })
+            else
+              case8()
+          }
+        else
+          case8()
+      };
+      case8(){
+        if (x1.ne(null))
+          {
+            val lang: String = x1._1().$asInstanceOf[String]();
+            val author: String = x1._2().$asInstanceOf[String]();
+            matchEnd6({
+              scala.this.Predef.println(lang.+(" ").+(author).+((" - pkg.Main.$anonfun(Main.scala:".+(scala.Int.box(335)).+(")"): String)));
+              scala.runtime.BoxedUnit.UNIT
+            })
+          }
+        else
+          case9()
+      };
+      case9(){
+        matchEnd6(throw new MatchError(x1))
+      };
+      matchEnd6(x: scala.runtime.BoxedUnit){
+        ()
+      }
+    };
+    final <bridge> <artifact> def apply(v1: Object): Object = {
+      $anonfun$main$6.this.apply(v1.$asInstanceOf[Tuple2]());
+      scala.runtime.BoxedUnit.UNIT
+    };
+    def <init>(): <$anon: Function1> = {
+      $anonfun$main$6.super.<init>();
+      ()
+    }
+  };
+  final class $anon$1 extends Object with PartialFunction {
+    def orElse(that: PartialFunction): PartialFunction = scala.PartialFunction$class.orElse($anon$1.this, that);
+    override def andThen(k: Function1): PartialFunction = scala.PartialFunction$class.andThen($anon$1.this, k);
+    def lift(): Function1 = scala.PartialFunction$class.lift($anon$1.this);
+    def applyOrElse(x: Object, default: Function1): Object = scala.PartialFunction$class.applyOrElse($anon$1.this, x, default);
+    def runWith(action: Function1): Function1 = scala.PartialFunction$class.runWith($anon$1.this, action);
+    <specialized> def apply$mcZD$sp(v1: Double): Boolean = scala.Function1$class.apply$mcZD$sp($anon$1.this, v1);
+    <specialized> def apply$mcDD$sp(v1: Double): Double = scala.Function1$class.apply$mcDD$sp($anon$1.this, v1);
+    <specialized> def apply$mcFD$sp(v1: Double): Float = scala.Function1$class.apply$mcFD$sp($anon$1.this, v1);
+    <specialized> def apply$mcID$sp(v1: Double): Int = scala.Function1$class.apply$mcID$sp($anon$1.this, v1);
+    <specialized> def apply$mcJD$sp(v1: Double): Long = scala.Function1$class.apply$mcJD$sp($anon$1.this, v1);
+    <specialized> def apply$mcVD$sp(v1: Double): Unit = scala.Function1$class.apply$mcVD$sp($anon$1.this, v1);
+    <specialized> def apply$mcZF$sp(v1: Float): Boolean = scala.Function1$class.apply$mcZF$sp($anon$1.this, v1);
+    <specialized> def apply$mcDF$sp(v1: Float): Double = scala.Function1$class.apply$mcDF$sp($anon$1.this, v1);
+    <specialized> def apply$mcFF$sp(v1: Float): Float = scala.Function1$class.apply$mcFF$sp($anon$1.this, v1);
+    <specialized> def apply$mcIF$sp(v1: Float): Int = scala.Function1$class.apply$mcIF$sp($anon$1.this, v1);
+    <specialized> def apply$mcJF$sp(v1: Float): Long = scala.Function1$class.apply$mcJF$sp($anon$1.this, v1);
+    <specialized> def apply$mcVF$sp(v1: Float): Unit = scala.Function1$class.apply$mcVF$sp($anon$1.this, v1);
+    <specialized> def apply$mcZI$sp(v1: Int): Boolean = scala.Function1$class.apply$mcZI$sp($anon$1.this, v1);
+    <specialized> def apply$mcDI$sp(v1: Int): Double = scala.Function1$class.apply$mcDI$sp($anon$1.this, v1);
+    <specialized> def apply$mcFI$sp(v1: Int): Float = scala.Function1$class.apply$mcFI$sp($anon$1.this, v1);
+    <specialized> def apply$mcII$sp(v1: Int): Int = scala.Function1$class.apply$mcII$sp($anon$1.this, v1);
+    <specialized> def apply$mcJI$sp(v1: Int): Long = scala.Function1$class.apply$mcJI$sp($anon$1.this, v1);
+    <specialized> def apply$mcVI$sp(v1: Int): Unit = scala.Function1$class.apply$mcVI$sp($anon$1.this, v1);
+    <specialized> def apply$mcZJ$sp(v1: Long): Boolean = scala.Function1$class.apply$mcZJ$sp($anon$1.this, v1);
+    <specialized> def apply$mcDJ$sp(v1: Long): Double = scala.Function1$class.apply$mcDJ$sp($anon$1.this, v1);
+    <specialized> def apply$mcFJ$sp(v1: Long): Float = scala.Function1$class.apply$mcFJ$sp($anon$1.this, v1);
+    <specialized> def apply$mcIJ$sp(v1: Long): Int = scala.Function1$class.apply$mcIJ$sp($anon$1.this, v1);
+    <specialized> def apply$mcJJ$sp(v1: Long): Long = scala.Function1$class.apply$mcJJ$sp($anon$1.this, v1);
+    <specialized> def apply$mcVJ$sp(v1: Long): Unit = scala.Function1$class.apply$mcVJ$sp($anon$1.this, v1);
+    @scala.annotation.unspecialized def compose(g: Function1): Function1 = scala.Function1$class.compose($anon$1.this, g);
+    override def toString(): String = scala.Function1$class.toString($anon$1.this);
+    override def isDefinedAt(x: Object): Boolean = if (x.$isInstanceOf[String]().||(x.$isInstanceOf[Double]()))
+      true
+    else
+      false;
+    override def apply(v1: Object): String = {
+      val toReturn: String = {
+        case <synthetic> val x1: Object = v1;
+        case6(){
+          if (x1.$isInstanceOf[String]())
+            matchEnd5("String")
+          else
+            case7()
+        };
+        case7(){
+          if (x1.$isInstanceOf[Double]())
+            matchEnd5("Double")
+          else
+            case8()
+        };
+        case8(){
+          matchEnd5(throw new MatchError(x1))
+        };
+        matchEnd5(x: String){
+          x
+        }
+      };
+      toReturn
+    };
+    override <bridge> <artifact> def andThen(g: Function1): Function1 = $anon$1.this.andThen(g);
+    override <bridge> <artifact> def apply(v1: Object): Object = $anon$1.this.apply(v1);
+    def <init>(): <$anon: Function1> = {
+      $anon$1.super.<init>();
+      scala.Function1$class./*Function1$class*/$init$($anon$1.this);
+      scala.PartialFunction$class./*PartialFunction$class*/$init$($anon$1.this);
+      ()
+    }
+  };
+  @SerialVersionUID(value = 0) final <synthetic> class $anonfun$4 extends scala.runtime.AbstractPartialFunction with Serializable {
+    final override def applyOrElse(x1: Object, default: Function1): Object = {
+      case <synthetic> val x1: Object = (((x1: Object): Object): Object);
+      case4(){
+        matchEnd3("Neither String nor Double")
+      };
+      matchEnd3(x: Object){
+        x
+      }
+    };
+    final def isDefinedAt(x1: Object): Boolean = {
+      case <synthetic> val x1: Object = (((x1: Object): Object): Object);
+      case4(){
+        matchEnd3(true)
+      };
+      matchEnd3(x: Boolean){
+        x
+      }
+    };
+    def <init>(): <$anon: Function1> = {
+      $anonfun$4.super.<init>();
+      ()
+    }
+  };
+  sealed abstract trait MyTrait$1 extends Object {
+    def returnMe(): pkg.MyTrait$1
+  };
+  class MyClass$1 extends Object with pkg.MyTrait$1 {
+    override def returnMe(): pkg.MyClass$1 = this;
+    override <bridge> <artifact> def returnMe(): pkg.MyTrait$1 = MyClass$1.this.returnMe();
+    def <init>(): pkg.MyClass$1 = {
+      MyClass$1.super.<init>();
+      ()
+    }
+  };
+  object mySingleton$2 extends Object {
+    def <init>(): pkg.mySingleton$2.type = {
+      mySingleton$2.super.<init>();
+      ()
+    }
+  };
+  object anotherSingleton$2 extends Object {
+    def <init>(): pkg.anotherSingleton$2.type = {
+      anotherSingleton$2.super.<init>();
+      ()
+    }
+  };
+  class Outer$1 extends Object {
+    private[this] val inner: pkg.Inner = _;
+    <stable> <accessor> def inner(): pkg.Inner = Outer$1.this.inner;
+    def <init>(): pkg.Outer$1 = {
+      Outer$1.super.<init>();
+      Outer$1.this.inner = new pkg.Inner(Outer$1.this);
+      ()
+    }
+  };
+  class Inner extends Object {
+    <synthetic> <paramaccessor> <artifact> protected val $outer: pkg.Outer$1 = _;
+    <synthetic> <stable> <artifact> def $outer(): pkg.Outer$1 = Inner.this.$outer;
+    def <init>($outer: pkg.Outer$1): pkg.Inner = {
+      if ($outer.eq(null))
+        throw null
+      else
+        Inner.this.$outer = $outer;
+      Inner.super.<init>();
+      ()
+    }
+  };
+  final class $anon$3 extends pkg.Outer$1 {
+    private[this] val inner: pkg.Inner = _;
+    override <stable> <accessor> def inner(): pkg.Inner = $anon$3.this.inner;
+    def <init>(): <$anon: pkg.Outer$1> = {
+      $anon$3.super.<init>();
+      $anon$3.this.inner = new pkg.Inner($anon$3.this);
+      ()
+    }
+  };
+  abstract trait Motion$1$class extends  {
+    def move($this: pkg.Motion$1): Unit = {
+      scala.this.Predef.println("Moving");
+      $this.numMotions_=($this.numMotions().+(1))
+    };
+    def /*Motion$1$class*/$init$($this: pkg.Motion$1): Unit = {
+      $this.privateWithThis_=(1);
+      $this.pkg$Main$Motion$1$_setter_$protectedWithThis_=(2);
+      $this.privateInMotion_=(3);
+      $this.pkg$Main$Motion$1$_setter_$protectedInMotion_=(4);
+      $this.pkg$Main$Motion$1$_setter_$publicVal_=("public");
+      $this.numMotions_=(0);
+      ()
+    }
+  }
+}
+
+Disconnected from the target VM, address: '127.0.0.1:46224', transport: 'socket'
+[success] Total time: 6 s, completed May 28, 2016 7:30:28 PM

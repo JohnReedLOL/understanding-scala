@@ -40,12 +40,6 @@ object Main {
       }
     }
     acceptString2(string2)
-    Thread.sleep(20) // sleeping prevents output garbling
-    import scala.trace.SDebug
-    SDebug.traceExpression(
-      acceptString2(string2) // this would not compile if it were multiple lines
-    )
-    Thread.sleep(20)
 
     // {curly braces} are used instead of (parenthesis) for multi-lines
     acceptString3{
@@ -292,13 +286,15 @@ object Main {
 
     println(myLazy + Pos()) // By this point the value is cached, no re-execution of "Debug.traceStdOut"
 
-    def return5: Int = {
+    def return5Func: Int = {
       5
     }
 
-    val vv: () => Int = return5 _ // this converts a function into a value of type "() => Int"
+    val return5value: () => Int = return5Func _ // this converts a function into a value of type "() => Int"
 
-    val vv2: Int = return5 // this evaluated the function, returning a value of type "Int"
+    val fiveValue: Int = return5Func // this evaluated the function, returning a value of type "Int"
+
+    println(fiveValue + Pos())
 
     def addNoCurrying(a: Int, b: Int) = {
       a + b
@@ -339,8 +335,6 @@ object Main {
         case (lang, author) => println(lang + " " + author + Pos())
       }
     }
-
-    import scala.trace.SDebug
 
     val boilerplateyPartialFunction = new PartialFunction[Any, String] {
 
@@ -432,6 +426,6 @@ object Main {
     }
 
     // Macros have to be defined in a seperete compilation unit (In this case another file)
-    println("I am going to use a macro to print: " + Macros.makeFive() + "|" + scala.trace.Pos())
+    // println("I am going to use a macro to print: " + Macros.makeFive() + "|" + Pos())
   }
 }

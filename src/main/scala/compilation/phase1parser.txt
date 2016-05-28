@@ -1,0 +1,353 @@
+[info] Compiling 1 Scala source to /home/johnreed/sbtProjects/episode1/target/scala-2.11/classes...
+[[syntax trees at end of                    parser]] // Main.scala
+package pkg {
+  object Main extends scala.AnyRef {
+    def <init>() = {
+      super.<init>();
+      ()
+    };
+    def acceptString1(s: String): Unit = {
+      val result = s;
+      println(s)
+    };
+    def acceptString2(stringFunc: Function0[String]): Unit = {
+      val result1: _root_.scala.Function0[String] = stringFunc;
+      val result2: String = stringFunc.apply();
+      val result3: String = stringFunc();
+      println(result1.$plus("|").$plus(result2).$plus("|").$plus(result3))
+    };
+    def acceptString3(s: _root_.scala.<byname>[String]): Unit = {
+      val result = s;
+      println(result)
+    };
+    def main(args: Array[String]): scala.Unit = {
+      val string1 = {
+        val left = "string";
+        val right = "1";
+        left.$plus(right)
+      };
+      import scala.trace.Pos;
+      acceptString1(string1.$plus(Pos()));
+      val string2 = {
+        final class $anon extends Function0[String] {
+          def <init>() = {
+            super.<init>();
+            ()
+          };
+          override def apply(): String = return "string2"
+        };
+        new $anon()
+      };
+      acceptString2(string2);
+      acceptString3({
+        println("Hey we are getting string 3".$plus(Pos()));
+        "string3"
+      });
+      def add(a: Int, b: Int): Int = a.$plus(b);
+      val stringArray1 = new Array[String](_length = 2);
+      val stringArray2 = Array.apply(1, 2, 3);
+      val stringArray3 = Array("1", "2", "3");
+      type IntT = Int;
+      val three: IntT = 1.$plus(2);
+      def acceptExistential1(seq: Seq[Whatever] forSome {
+        type Whatever
+      }) = scala.trace.SDebug.traceContentsStdOut(seq);
+      def acceptExistential2(seq: Seq[_$1] forSome {
+        <synthetic> type _$1
+      }) = scala.trace.SDebug.traceContentsStdOut(seq);
+      def acceptInts(seq: Seq[Int]) = ();
+      val sequenceOfWhateverType: Seq[_$2] forSome {
+        <synthetic> type _$2
+      } = List(1, 2, 3);
+      acceptExistential1(sequenceOfWhateverType);
+      acceptExistential2(sequenceOfWhateverType);
+      acceptInts(List(1, 2, 3));
+      val sequenceOfWhateverType2: Seq[_$3] forSome {
+        <synthetic> type _$3
+      } = List("1", "2", "3");
+      val crazyName_$bang$at$less$greater$bslash$eq$times$amp$up$percent$tilde$tilde$tilde$tilde$tilde$tilde$minus$eq$colon = 5;
+      println(crazyName_$bang$at$less$greater$bslash$eq$times$amp$up$percent$tilde$tilde$tilde$tilde$tilde$tilde$minus$eq$colon.$plus(Pos()));
+      abstract trait Motion extends scala.AnyRef {
+        def $init$() = {
+          ()
+        };
+        type MyType <: Motion;
+        private[this] val privateWithThis = 1;
+        protected[this] val protectedWithThis = 2;
+        private[Motion] val privateInMotion = 3;
+        protected[Motion] val protectedInMotion = 4;
+        val publicVal = "public";
+        var numMotions = 0;
+        def move(): Unit = {
+          println("Moving");
+          numMotions.$plus$eq(1)
+        };
+        def returnMe: MyType;
+        def returnMotion: Motion
+      };
+      abstract class Animal extends scala.AnyRef {
+        <paramaccessor> val isMulticellular: Boolean = _;
+        def <init>(isMulticellular: Boolean = true) = {
+          super.<init>();
+          ()
+        };
+        private[pkg] val packagePrivate = 5;
+        protected[pkg] val tuple = scala.Tuple3(1, 2, 3)
+      };
+      class Person1 extends Animal with Motion {
+        <paramaccessor> val name: String = _;
+        <paramaccessor> val age: Int = _;
+        def <init>(name: String, age: Int) = {
+          super.<init>();
+          ()
+        };
+        println(packagePrivate);
+        println(publicVal);
+        println(this.protectedWithThis);
+        def printOther(other: Person1) = {
+          println(this.protectedWithThis);
+          println(other.protectedInMotion)
+        };
+        type MyClassType = Person1;
+        override type MyType = this.type;
+        override def returnMotion: Person1 = this;
+        override def returnMe: Person1.this.type = this
+      };
+      class Person2 extends Animal with Motion {
+        <paramaccessor> val name: String = _;
+        <paramaccessor> val age: Int = _;
+        def <init>(name: String, age: Int) = {
+          super.<init>();
+          ()
+        };
+        override type MyType = Person2;
+        override def returnMe: MyType = this;
+        override def returnMotion: Motion = this
+      };
+      case class caseBacterial extends Animal(false) with scala.Product with scala.Serializable {
+        <caseaccessor> <paramaccessor> val name: String = _;
+        def <init>(name: String) = {
+          super.<init>();
+          ()
+        }
+      };
+      println("Hello World 1");
+      println("Hello World 2".$plus(Pos()));
+      implicit val f: Int = 5;
+      def implicitFunc(implicit f: Int) = println(f);
+      implicitFunc;
+      val implicitInt = implicitly[Int];
+      implicit val myImplicitFloat: Float = 7.4.toFloat;
+      val implicitFloat: Float = implicitly[Float];
+      println(implicitFloat.$plus(Pos()));
+      final class IntWrapper extends scala.AnyRef {
+        <paramaccessor> val i: Int = _;
+        def <init>(i: Int) = {
+          super.<init>();
+          ()
+        };
+        def sayHi(): Unit = println("Hi")
+      };
+      import scala.language.implicitConversions;
+      implicit def wrapIntInWrapper(i: Int) = new IntWrapper(i);
+      val six = 6;
+      six.sayHi();
+      wrapIntInWrapper(six).sayHi();
+      def onlyTuples[Type, TupleL, TupleR](tuple: Type)(implicit evidence: $less$colon$less[Type, scala.Tuple2[TupleL, TupleR]]) = ();
+      onlyTuples(scala.Tuple2(1, 1));
+      val inclusiveRange: Range.Inclusive = 1.to(10);
+      val exclusiveRange = 1.until(10);
+      1.to(10).foreach(((i) => ()));
+      inclusiveRange.foreach(((i) => println(i.$plus(Pos()))));
+      inclusiveRange.foreach(((i) => exclusiveRange.foreach(((i) => ()))));
+      var loopCounter = 0;
+      while$1(){
+        if (loopCounter.$less(10))
+          {
+            loopCounter.$plus$eq(1);
+            while$1()
+          }
+        else
+          ()
+      };
+      val matrixCharacters = List("neo", "smith", "trinity");
+      val toInts: _root_.scala.Function1[String, List[Int]] = ((str) => {
+        val numbers = str.map(((char) => char.toInt));
+        numbers.toList
+      });
+      val listOfLists: List[List[Int]] = matrixCharacters.map(toInts);
+      val flatList: List[Int] = matrixCharacters.flatMap(toInts);
+      val flatList2: List[Int] = matrixCharacters.flatMap(((character) => toInts(character).map(((int) => int))));
+      val flatList3: List[Int] = matrixCharacters.flatMap(((character) => toInts(character)));
+      val flatList4: List[Int] = matrixCharacters.flatMap(toInts);
+      val outerList: List[Int] = List(1, 2, 3);
+      val productList1: List[Int] = outerList.flatMap(((element) => List(1, 2).map(((inner) => inner.$times(element)))));
+      scala.trace.SDebug.traceContentsStdOut(productList1);
+      def printAll(strings: _root_.scala.<repeated>[String]): Unit = {
+        val stringList = strings;
+        strings.foreach(((e) => println(e)))
+      };
+      printAll("a", "b", "c", "d", "e", Pos());
+      val innerList = List(1, 2, 3);
+      val productList2: List[Int] = List(1, 2).flatMap(((outer) => innerList.withFilter(((inner) => inner.$less(3))).map(((inner) => outer.$plus(inner)))));
+      scala.trace.SDebug.traceContentsStdOut(productList2);
+      val helloWorld = {
+        val hello = "hello";
+        val world = "world";
+        hello.$plus(world)
+      };
+      def returnNothing(): Unit = {
+        type UnitT = Unit;
+        def totallyUnnecessary(): UnitT = ();
+        val someThing = "something";
+        ()
+      };
+      val nothing = returnNothing;
+      val pairs = List(scala.Tuple2("1", 1), scala.Tuple2("2", 2));
+      pairs.foreach(((pair) => {
+        <synthetic> <artifact> private[this] val x$1 = pair: @scala.unchecked match {
+          case scala.Tuple2((strVal @ _), (intVal @ _)) => scala.Tuple2(strVal, intVal)
+        };
+        val strVal = x$1._1;
+        val intVal = x$1._2;
+        println(strVal.$plus(" ").$plus(intVal).$plus(Pos()))
+      }));
+      import scala.annotation.tailrec;
+      @new tailrec() def tailRecursiveCount(i: Int): Int = if (i.$eq$eq(0))
+        {
+          println("Done");
+          0
+        }
+      else
+        tailRecursiveCount(i.$minus(1));
+      lazy val myLazy = {
+        scala.trace.Debug.traceStdOut("Lets get lazy", 3);
+        tailRecursiveCount(2)
+      };
+      println(myLazy.$plus(Pos()));
+      println(myLazy.$plus(Pos()));
+      def return5Func: Int = 5;
+      val return5value: _root_.scala.Function0[Int] = (return5Func: (() => <empty>));
+      val fiveValue: Int = return5Func;
+      println(fiveValue.$plus(Pos()));
+      def addNoCurrying(a: Int, b: Int) = a.$plus(b);
+      val addNoCurryingToVal: _root_.scala.Function2[Int, Int, Int] = (addNoCurrying: (() => <empty>));
+      def curryingAdditionFunction(a: Int)(b: Int) = a.$plus(b);
+      val curryingAdditionValue: _root_.scala.Function1[Int, _root_.scala.Function1[Int, Int]] = (addNoCurrying: (() => <empty>)).curried;
+      val addFive: _root_.scala.Function1[Int, Int] = curryingAdditionValue(5);
+      val ten = addFive(5);
+      println(ten.$plus(Pos()));
+      val evilNull: Null = null;
+      type topOfTypeHierarchy = Any;
+      type bottomOfTypeHierarchy = Nothing;
+      def unimplemented: Nothing = $qmark$qmark$qmark;
+      val langs: List[scala.Tuple2[String, String]] = List(scala.Tuple2("C++", "Stroustrup"), scala.Tuple2("Scala", "Odersky"));
+      langs.foreach(((tuple) => tuple match {
+        case scala.Tuple2("Scala", _) => println("Scala".$plus(Pos()))
+        case scala.Tuple2((lang @ _), (author @ _)) => println(lang.$plus(" ").$plus(author).$plus(Pos()))
+      }));
+      val boilerplateyPartialFunction = {
+        final class $anon extends PartialFunction[Any, String] {
+          def <init>() = {
+            super.<init>();
+            ()
+          };
+          override def isDefinedAt(x: Any): Boolean = if (x.isInstanceOf[String].$bar$bar(x.isInstanceOf[Double]))
+            true
+          else
+            false;
+          override def apply(v1: Any): String = {
+            val toReturn: String = v1 match {
+              case (s @ (_: String)) => "String"
+              case (d @ (_: Double)) => "Double"
+            };
+            toReturn
+          }
+        };
+        new $anon()
+      };
+      try {
+        println(boilerplateyPartialFunction.isDefinedAt(5).$plus(Pos()));
+        println(boilerplateyPartialFunction.apply(5).$plus(Pos()))
+      } catch {
+        case (_: MatchError) => println("Is not defined".$plus(Pos()))
+      };
+      val partialFunction: PartialFunction[Any, String] = <empty> match {
+        case _ => "Neither String nor Double"
+      };
+      val wholeFunction: PartialFunction[Any, String] = boilerplateyPartialFunction.orElse(partialFunction);
+      import scala.trace.implicitlyPrintable;
+      val foo = "foo";
+      foo.$plus(Pos()).println();
+      sealed abstract trait MyTrait extends scala.AnyRef {
+        type T <: MyTrait;
+        def returnMe: T
+      };
+      class MyClass extends MyTrait {
+        def <init>() = {
+          super.<init>();
+          ()
+        };
+        override type T = MyClass;
+        override def returnMe: T = this
+      };
+      type T[_] = List[_$4] forSome {
+        <synthetic> type _$4
+      };
+      type T2 = List[_$5] forSome {
+        <synthetic> type _$5
+      };
+      val existentialTypeList: T2 = List(1, 2, 3);
+      val listOfInt: T[Int] = List(1, 2, 3, 4);
+      println();
+      type IntList = T[Int];
+      type IntList2 = T[Int];
+      object mySingleton extends scala.AnyRef {
+        def <init>() = {
+          super.<init>();
+          ()
+        };
+        type myType = mySingleton.type
+      };
+      object anotherSingleton extends scala.AnyRef {
+        def <init>() = {
+          super.<init>();
+          ()
+        };
+        <empty>
+      };
+      type singletonType = mySingleton.type;
+      def takeInSingleton(s: mySingleton.type): s.myType = s;
+      takeInSingleton(mySingleton);
+      class Outer extends scala.AnyRef {
+        def <init>() = {
+          super.<init>();
+          ()
+        };
+        val inner: Outer.this.Inner = new Outer.this.Inner();
+        class Inner extends scala.AnyRef {
+          def <init>() = {
+            super.<init>();
+            ()
+          };
+          <empty>
+        }
+      };
+      val outer1 = new Outer();
+      val outer2 = {
+        final class $anon extends Outer {
+          def <init>() = {
+            super.<init>();
+            ()
+          };
+          override val inner = new Inner()
+        };
+        new $anon()
+      };
+      ()
+    }
+  }
+}
+
+Disconnected from the target VM, address: '127.0.0.1:32839', transport: 'socket'
+[success] Total time: 5 s, completed May 28, 2016 7:14:44 PM
