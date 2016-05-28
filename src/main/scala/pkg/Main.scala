@@ -5,8 +5,22 @@ package pkg
   */
 object Main {
 
-  import scala.language.existentials
-  import scala.language.experimental.macros
+  def acceptString1(s: String): Unit = {
+    val result = s // this copies a reference to an immutable String
+    println(s)
+  }
+
+  def acceptString2(stringFunc: Function0[String]): Unit = {
+    val result1: () => String = stringFunc // this is object assignment
+    val result2: String = stringFunc.apply() // "apply" is optional, can be left out.
+    val result3: String = stringFunc()
+    println(result1 + "|" + result2 + "|" + result3)
+  }
+
+  def acceptString3(s: => String): Unit = {
+    val result = s // this executes a function call that returns a String
+    println(result)
+  }
 
   def main(args: Array[String]) {
 
@@ -16,23 +30,29 @@ object Main {
       left + right
     } // string1 = "string1"
 
-    acceptString1(string1)
+    import scala.trace.Pos // position
+    acceptString1(string1 + Pos())
     val string2 = new Function0[String] {
       // no parenthesis "apply" method is getter - no side effects
-      override def apply: String = {
+      override def apply(): String = {
         // Note: using "return" is bad style, unnecessary boilerplate.
         return "string2" // you can (and should) leave out "return"
       }
     }
     acceptString2(string2)
-    acceptString3 {
+    Thread.sleep(20) // sleeping prevents output garbling
+    import scala.trace.SDebug
+    SDebug.traceExpression(
+      acceptString2(string2) // this would not compile if it were multiple lines
+    )
+    Thread.sleep(20)
+
+    // {curly braces} are used instead of (parenthesis) for multi-lines
+    acceptString3{
       // curly braces are for multi-line, parenthesis only compile for single-line
-      println("Hey we are getting string 3")
+      println("Hey we are getting string 3" + Pos())
       "string3"
     }
-
-    import scala.trace.Pos
-    // position
 
     def add(a: Int, b: Int): Int = {
       a + b
@@ -222,7 +242,7 @@ object Main {
       val stringList = strings
       strings.foreach { e => println(e) }
     }
-    printAll("a", "b", "c", "d", "e")
+    printAll("a", "b", "c", "d", "e", Pos())
 
     val innerList = List(1, 2, 3)
     val productList2: List[Int] = for {
@@ -410,32 +430,8 @@ object Main {
     val outer2 = new Outer {
       override val inner = new Inner()
     }
+
+    // Macros have to be defined in a seperete compilation unit (In this case another file)
+    println("I am going to use a macro to print: " + Macros.makeFive() + "|" + scala.trace.Pos())
   }
-
-  def acceptString1(s: String): Unit = {
-    val result = s // this copies a reference to an immutable String
-    println(s)
-  }
-
-  def acceptString2(s: Function0[String]): Unit = {
-    val result = s // this executes a function call that returns a String
-    println(result)
-  }
-
-  def acceptString3(s: => String): Unit = {
-    val result = s // this executes a function call that returns a String
-    println(result)
-  }
-
-  object makeFive {
-    def apply: Int = macro makeFiveMacro
-
-    def makeFiveMacro(c: scala.reflect.macros.blackbox.Context): c.Tree = {
-      import c.universe._
-      val five = 5
-      q"""$five""" // this just adds 5 into the source code at compile time
-    }
-  }
-
-  println("I am going to use a macro to print: " + makeFive)
 }
