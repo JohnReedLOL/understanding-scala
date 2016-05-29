@@ -1,4 +1,4 @@
-name := "understandingscala"
+name := "understanding-scala"
 
 version := "1.0"
 
@@ -11,6 +11,8 @@ libraryDependencies += "scala.trace" %% "scala-trace-debug" % "2.2.14"
 libraryDependencies += "com.twitter" %% "util-collection" % "6.34.0"
 
 resolvers += Resolver.sonatypeRepo("releases")
+
+unmanagedJars in Compile += scalaInstance.value.libraryJar
 
 def macroDependencies(version: String) =
   Seq(
