@@ -1,7 +1,7 @@
 # UnderstandingScala
-Understanding the Scala language through a tour-do-force of features
+###### Understanding the Scala language through a tour-de-force of features
 
-This repository aims at providing features and showing what those features compile into. 
+Provides features and shows what those features compile into. 
 
 Source code is in [here](src/main/scala/pkg/Main.scala).
 
