@@ -1,4 +1,4 @@
-name := "episode1"
+name := "understandingscala"
 
 version := "1.0"
 
